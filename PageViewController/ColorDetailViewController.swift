@@ -23,13 +23,29 @@ class ColorDetailViewController: UIViewController {
         super.viewDidLoad()
         
         pageViewController = storyboard?.instantiateViewControllerWithIdentifier("ColorDetailViewController") as? UIPageViewController
+        pageViewController?.dataSource = self
+        pageViewController?.delegate = self
         
+        pageControl.numberOfPages = colorsArray.count
+        pageControl.currentPage = currentPage
         
+        let startingViewController = viewControllerAtIndex(currentPage)
+        pageViewController?.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
         
+        self.addChildViewController(pageViewController!)
+        view.addSubview(pageViewController!.view)
+        pageViewController?.didMoveToParentViewController(self)
         
         
         
     }
 
+    func viewControllerAtIndex(index: Int) -> ColorDetailContentViewController{
+        let colorDetailVC = storyboard?.instantiateViewControllerWithIdentifier("ColorContentViewController") as? ColorDetailContentViewController
+        colorDetailVC?.pageIndex = index
+        colorDetailVC?.detailBackgroundColor = colorsArray[index]
+            return colorDetailVC!
+        
+    }
 
 }
