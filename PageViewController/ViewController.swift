@@ -25,9 +25,21 @@ tableView.tableFooterView = UIView(frame: CGRectZero)
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ColorSegue"{
+            if let colorDetailVC = segue.destinationViewController as? ColorDetailViewController{
+                colorDetailVC.colorsArray = colorsArray
+                colorDetailVC.currentPage = tableView.indexPathForSelectedRow!.row
+                tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true)
+                
+            }
+            
+    }
 
 }
-
+    
+}
 
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
