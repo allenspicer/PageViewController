@@ -12,6 +12,7 @@
 		9FAB36771D09A41400795F4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FAB36751D09A41400795F4E /* Main.storyboard */; };
 		9FAB36791D09A41400795F4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FAB36781D09A41400795F4E /* Assets.xcassets */; };
 		9FAB367C1D09A41400795F4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FAB367A1D09A41400795F4E /* LaunchScreen.storyboard */; };
+		9FAB36861D09A98300795F4E /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB36851D09A98300795F4E /* ColorDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9FAB36781D09A41400795F4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FAB367B1D09A41400795F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FAB367D1D09A41400795F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FAB36851D09A98300795F4E /* ColorDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				9FAB36711D09A41400795F4E /* AppDelegate.swift */,
+				9FAB36851D09A98300795F4E /* ColorDetailViewController.swift */,
 				9FAB36731D09A41400795F4E /* ViewController.swift */,
 				9FAB36751D09A41400795F4E /* Main.storyboard */,
 				9FAB36781D09A41400795F4E /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FAB36861D09A98300795F4E /* ColorDetailViewController.swift in Sources */,
 				9FAB36741D09A41400795F4E /* ViewController.swift in Sources */,
 				9FAB36721D09A41400795F4E /* AppDelegate.swift in Sources */,
 			);

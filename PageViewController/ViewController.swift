@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    let colorsArray = ["Red", "Blue", "Green", "Yellow", "Purple"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+tableView.tableFooterView = UIView(frame: CGRectZero)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +26,26 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
+
+
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return colorsArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ColorCell", forIndexPath: indexPath)
+        cell.textLabel?.text = colorsArray[indexPath.row]
+        
+        return cell
+    }
+    
+    
+}
+
+
 

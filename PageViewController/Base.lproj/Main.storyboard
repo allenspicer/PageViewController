@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="colorCell" textLabel="BLp-Po-3G8" style="IBUITableViewCellStyleDefault" id="Wke-lE-lPG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColorCell" textLabel="BLp-Po-3G8" style="IBUITableViewCellStyleDefault" id="Wke-lE-lPG">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wke-lE-lPG" id="3q8-bQ-f20">
@@ -58,6 +58,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bkH-ho-oqr"/>
+                    <connections>
+                        <outlet property="tableView" destination="2sg-XV-EbX" id="872-Bm-zvq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,7 +69,7 @@
         <!--Color Detail View Controller-->
         <scene sceneID="yEP-qi-I7G">
             <objects>
-                <viewController id="xS3-uZ-vL3" userLabel="Color Detail View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorDetailViewController" id="xS3-uZ-vL3" userLabel="Color Detail View Controller" customClass="ColorDetailViewController" customModule="PageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="stj-aQ-xUr"/>
                         <viewControllerLayoutGuide type="bottom" id="Pvz-TZ-DvS"/>
@@ -75,21 +78,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jCm-Mk-e2k">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jCm-Mk-e2k">
                                 <rect key="frame" x="281" y="543" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.72156862749999995" green="0.72549019609999998" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pvz-TZ-DvS" firstAttribute="top" secondItem="jCm-Mk-e2k" secondAttribute="bottom" constant="20" id="a7K-Se-MYI"/>
+                            <constraint firstItem="jCm-Mk-e2k" firstAttribute="centerX" secondItem="5Ih-JZ-2yH" secondAttribute="centerX" id="ckO-5P-0Ri"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="jCm-Mk-e2k" id="ZKx-oN-2uh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fv-ug-XrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1769" y="301"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="hcw-Xf-Smn">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="MY3-h8-He4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6uA-Op-meN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2407" y="985"/>
+        </scene>
         <!--Color Content View Controller-->
         <scene sceneID="5Ka-qv-DTq">
             <objects>
-                <viewController id="7ee-7Q-qVf" userLabel="Color Content View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorContentViewController" id="7ee-7Q-qVf" userLabel="Color Content View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uJ6-Hk-GuN"/>
                         <viewControllerLayoutGuide type="bottom" id="aJw-4I-bCG"/>
