@@ -49,3 +49,24 @@ class ColorDetailViewController: UIViewController {
     }
 
 }
+
+
+extension ColorDetailViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource{
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        let index = currentPage + 1
+        if index == 0 || index == colorsArray.count {
+            return nil
+        }
+        return viewControllerAtIndex(index)
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        let index = currentPage - 1
+        if index == 0 || index == NSNotFound {
+            return nil
+        }
+        return viewControllerAtIndex(index)
+    }
+    
+}
